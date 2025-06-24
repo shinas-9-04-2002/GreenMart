@@ -22,10 +22,25 @@ const Hero = () => {
                 <div className="flex items-center mt-6 font-medium gap-6">
                     <Link
                         to="/products"
-                        className="flex group items-center gap-2 px-7 rounded text-white py-3 bg-primary cursor-pointer"
+                        className="  flex group items-center gap-2 px-7 rounded text-white py-3 bg-primary cursor-pointer"
                     >
                         Shop Now
-                        <img src={assets.white_arrow_icon} alt="" className="md:hidden transition group-focus"/>
+                        <img
+                            src={assets.white_arrow_icon}
+                            alt=""
+                            className="md:hidden transition group-focus:translate-x-1"
+                        />
+                    </Link>
+                    <Link
+                        to="/products"
+                        className=" hidden md:flex group items-center gap-2 px-7 rounded text-white py-3 bg-primary cursor-pointer"
+                    >
+                        Explore Deals
+                        <img
+                            src={assets.white_arrow_icon}
+                            alt=""
+                            className="md:hidden transition group-focus:translate-x-1"
+                        />
                     </Link>
                 </div>
             </div>
