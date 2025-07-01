@@ -15,13 +15,14 @@ const Footer = () => {
     ];
 
     return (
-        <div className="py-16 px-6 md:px-16 lg:px-24 xl:px-32">
+        <div className="pt-16 px-6 md:px-16 lg:px-24 xl:px-32 ">
             <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-gray-500/30 text-gray-500">
                 <div>
                     <h2 className="font-semibold text-2xl md:text-3xl  text-gray-900">GreenMart</h2>
                     <p className="text-sm md:text-base mt-2">
                        GreenMart is your one-stop online grocery store, bringing you the freshest produce, everyday essentials, and unbeatable deals — all delivered to your doorstep. Shop smart, live healthy, and save more with us.
                     </p>
+                    
                 </div>
                 <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
                     {linkSections.map((section, index) => (
