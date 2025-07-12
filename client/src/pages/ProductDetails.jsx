@@ -54,27 +54,31 @@ const ProductDetails = () => {
                         <div className="flex items-center gap-0.5 mt-1">
                             {Array(5)
                                 .fill("")
-                                .map((_, i) =>
-                                    product.rating >
-                                (
-                                    <img
-                                     src={i<4 ? assets.star_icon:assets.star_dull_icon}
-                                    alt="star"
-                                    key={i}
-                                     className="w-3.5 md:w-4" />
-                                
-                                )
-                                    
-                        )}
+                                .map(
+                                    (_, i) =>
+                                        product.rating >
+                                        (
+                                            <img
+                                                src={
+                                                    i < 4
+                                                        ? assets.star_icon
+                                                        : assets.star_dull_icon
+                                                }
+                                                alt="star"
+                                                key={i}
+                                                className="w-3.5 md:w-4"
+                                            />
+                                        )
+                                )}
                             <p className="text-base ml-2">(4)</p>
                         </div>
 
                         <div className="mt-6">
                             <p className="text-gray-500/70 line-through">
-                                MRP: ${product.price}
+                                MRP: ₹{product.price}
                             </p>
                             <p className="text-2xl font-medium">
-                                MRP: ${product.offerPrice}
+                                MRP: ₹{product.offerPrice}
                             </p>
                             <span className="text-gray-500/70">
                                 (inclusive of all taxes)
@@ -91,18 +95,65 @@ const ProductDetails = () => {
                         </ul>
 
                         <div className="flex items-center mt-10 gap-4 text-base">
-                            <button onClick={()=>addToCart(product._id)} className="w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition">
+                            <button
+                                onClick={() => addToCart(product._id)}
+                                className="w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition"
+                            >
                                 Add to Cart
                             </button>
-                            <button onClick={()=>{
-                                addToCart(product._id)
-                                navigate("/cart")
-                            }} className="w-full py-3.5 cursor-pointer font-medium bg-indigo-500 text-white hover:bg-indigo-600 transition">
+                            <button
+                                onClick={() => {
+                                    addToCart(product._id);
+                                    navigate("/cart");
+                                }}
+                                className="w-full py-3.5 cursor-pointer font-medium bg-indigo-500 text-white hover:bg-indigo-600 transition"
+                            >
                                 Buy now
                             </button>
                         </div>
                     </div>
                 </div>
+                {/* Customer Reviews */}
+                {product.reviews && product.reviews.length > 0 && (
+                    <div className="mt-16 mb-10">
+                        <h2 className="text-xl font-semibold mb-4">
+                            Customer Reviews
+                        </h2>
+                        <div className="space-y-4">
+                            {product.reviews.map((review, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-gray-50 border border-gray-200 rounded-lg p-4"
+                                >
+                                    <div className="flex items-center justify-between mb-1">
+                                        <span className="font-medium text-gray-800">
+                                            {review.username}
+                                        </span>
+                                        <div className="flex items-center">
+                                            {Array(5)
+                                                .fill("")
+                                                .map((_, i) => (
+                                                    <img
+                                                        key={i}
+                                                        src={
+                                                            i < review.rating
+                                                                ? assets.star_icon
+                                                                : assets.star_dull_icon
+                                                        }
+                                                        alt="star"
+                                                        className="w-4 h-4"
+                                                    />
+                                                ))}
+                                        </div>
+                                    </div>
+                                    <p className="text-gray-600 text-sm mt-1">
+                                        {review.comment}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         )
     );

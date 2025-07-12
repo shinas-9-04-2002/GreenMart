@@ -214,6 +214,7 @@ export const dummyProducts = [
       "Rich in carbohydrates",
       "Ideal for curries and fries",
     ],
+    
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
