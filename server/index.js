@@ -7,7 +7,8 @@ dotenv.config();
 
 import userRoutes from "./routes/user.routes.js"
 import sellerRoutes from "./routes/seller.routes.js"
-import productRoutes from "./routes/product.router.js"
+import productRoutes from "./routes/product.routes.js"
+import cartRoutes from "./routes/cart.routes.js"
 import { connectCloudinary } from './config/cloudinary.js';
 
 const app=express();
@@ -32,6 +33,7 @@ app.get('/', (req,res)=>{
 app.use("/api/user",userRoutes)
 app.use("/api/seller",sellerRoutes)
 app.use("/api/product",productRoutes)
+app.use("/api/cart",cartRoutes)
 
 const PORT=process.env.PORT || 4000;
 
