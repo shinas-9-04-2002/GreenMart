@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
 
       <NavLink to='/' onClick={()=> setOpen(false)}>
-         <h1 className="text-3xl font-bold " style={{color:'#2f855a'}}>GreenMart</h1>
+         <h1 className="text-3xl font-bold text-primary" >GreenMart</h1>
       </NavLink>
 
       <div className="hidden sm:flex items-center gap-8">
