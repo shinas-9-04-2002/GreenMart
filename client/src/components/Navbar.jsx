@@ -160,6 +160,14 @@ const Navbar = () => {
                     <NavLink to="/contact" onClick={() => setOpen(false)}>
                         Contact
                     </NavLink>
+                    {!user && (
+                    <button
+                        className="py-2.5 px-4 text-sm rounded-full border border-solid border-red-200 text-red-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-red-600 hover:text-white"
+                        onClick={() => navigate("/seller")}
+                    >
+                        Admin
+                    </button>
+                )}
 
                     {!user ? (
                         <button
