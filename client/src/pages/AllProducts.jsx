@@ -20,10 +20,10 @@ const AllProducts = () => {
     <div className='mt-16 flex flex-col'>
       <div className='flex flex-col items-end w-max'>
         <p className='text-2xl font-medium uppercase'>All products</p>
-        <div className='w-16 h-0.5 bg-primary rounded-full'></div>
+        <div className='w-45 h-0.5 bg-primary rounded-full'></div>
       </div>
 
-        <div className='flex flex-wrap gap-3 md:gap-6 mt-6'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 mt-6 gap-6'>
            {filteredProducts.filter((product)=> product.inStock).map((product, index)=>(
             <ProductCard key={index} product={product}/>
            ))}
